@@ -13,7 +13,7 @@ services:
     build: ./node02
     container_name: node02
     tty: true
-    command: /bin/bash -c "/bin/bash /tmp/init.sh && /bin/bash"
+    command: /bin/bash -c "/usr/bin/supervisord -c /etc/supervisord.conf && /bin/bash"
     depends_on:
       - node01
     ports:
@@ -23,7 +23,7 @@ services:
     build: ./node03
     container_name: node03
     tty: true
-    command: /bin/bash -c "/bin/bash /tmp/init.sh && /bin/bash"
+    command: /bin/bash -c "/usr/bin/supervisord -c /etc/supervisord.conf && /bin/bash"
     depends_on:
       - node01
     ports:
@@ -33,7 +33,7 @@ services:
     build: ./node04
     container_name: node04
     tty: true
-    command: /bin/bash -c "/bin/bash /tmp/init.sh && /bin/bash"
+    command: /bin/bash -c "/usr/bin/supervisord -c /etc/supervisord.conf && /bin/bash"
     depends_on:
       - node01
     ports:
@@ -43,7 +43,7 @@ services:
     build: ./node05
     container_name: node05
     tty: true
-    command: /bin/bash -c "/bin/bash /tmp/init.sh && /bin/bash"
+    command: /bin/bash -c "/usr/bin/supervisord -c /etc/supervisord.conf && /bin/bash"
     ports:
       - '11005:3306'
 
