@@ -39,9 +39,3 @@ RUN /bin/cp -f /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
 # Port
 #################################################
 EXPOSE 3306
-
-#################################################
-# Initialize Script
-#################################################
-COPY init.sh /tmp/
-RUN chmod a+x /tmp/init.sh
