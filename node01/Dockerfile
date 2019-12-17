@@ -1,6 +1,4 @@
 FROM centos:centos7
-MAINTAINER t.katagiri@gmail.com
-
 
 #################################################
 # Install
