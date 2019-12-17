@@ -7,7 +7,7 @@ services:
     tty: true
     command: /bin/bash -c "/bin/bash /tmp/init.sh && /bin/bash"
     ports:
-      - '11001:3306'
+      - '11101:3306'
 
   node02:
     build: ./node02
@@ -17,7 +17,7 @@ services:
     depends_on:
       - node01
     ports:
-      - '11002:3306'
+      - '11102:3306'
 
   node03:
     build: ./node03
@@ -27,7 +27,7 @@ services:
     depends_on:
       - node01
     ports:
-      - '11003:3306'
+      - '11103:3306'
 
   node04:
     build: ./node04
@@ -37,7 +37,7 @@ services:
     depends_on:
       - node01
     ports:
-      - '11004:3306'
+      - '11104:3306'
 
   node05:
     build: ./node05
@@ -45,5 +45,5 @@ services:
     tty: true
     command: /bin/bash -c "/usr/bin/supervisord -c /etc/supervisord.conf && /bin/bash"
     ports:
-      - '11005:3306'
+      - '11105:3306'
 

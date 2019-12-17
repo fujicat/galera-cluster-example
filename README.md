@@ -7,9 +7,9 @@ Start and stop the service with supervisorctl.
 - Start: `supervisorctl start mysqld`
 - Stop: `supervisorctl stop mysqld`
 
-Each node's mysql is listening on the host computer with port number 11001 to 11005.  
+Each node's mysql is listening on the host computer with port number 11101 to 11105.  
 A database has been created with the name `galera_test` for verification, and you can connect with user name:` galera` and password: `password`.
 
 ```
-mysql -u galera -ppassword -P 11001
+mysql -u galera -ppassword -P 11101
 ```
