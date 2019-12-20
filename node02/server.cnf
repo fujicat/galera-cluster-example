@@ -9,7 +9,6 @@ thread_handling = pool-of-threads
 max_connections = 500
 innodb_file_per_table = 1
 innodb_file_format = Barracuda
-innodb_file_format_max = Barracuda
 
 # log
 log_bin=mysql-bin
