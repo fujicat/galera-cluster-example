@@ -19,6 +19,17 @@ slow_query_log_file=/var/log/mysql/slow.log
 log-error=/var/log/mysql/error.log
 innodb_print_all_deadlocks=ON
 
+# encrypt
+plugin-load-add = file_key_management.so
+file-key-management-filename = /etc/keys.enc
+file_key_management_filekey = FILE:/etc/secret.txt
+file_key_management_encryption_algorithm = AES_CBC
+innodb-encrypt-tables = ON
+innodb-encrypt-log = 1
+encrypt-tmp-disk-tables = 1
+encrypt-tmp-files = 1
+encrypt-binlog = 1
+
 [galera]
 wsrep_on=ON
 wsrep_provider=/usr/lib64/galera/libgalera_smm.so

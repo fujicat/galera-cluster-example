@@ -1,10 +1,9 @@
 #!/bin/bash
 /usr/bin/supervisord -c /etc/supervisord.conf
 
-for i in `seq 1 5`;
-do
-	/usr/bin/nc -z localhost 3306 && break
-	sleep 1
+until mysqladmin ping -h localhost --silent; do
+	echo 'waiting for mysqld to be connectable...'
+	sleep 3
 done
 
 echo "GRANT ALL ON *.* TO 'root'@'localhost' IDENTIFIED BY 'password';" | /usr/bin/mysql -u root

@@ -12,10 +12,13 @@ RUN yum -y update && \
 # MariaDB conf
 #################################################
 COPY server.cnf /etc/my.cnf.d/
+COPY etc/* /etc/
 RUN mkdir /var/log/mysql && \
     chown mysql:mysql /var/log/mysql && \
     mkdir -p /usr/bin/share/mysql && \
-    cp /usr/share/mysql/english/errmsg.sys /usr/bin/share/mysql/
+    cp /usr/share/mysql/english/errmsg.sys /usr/bin/share/mysql/ && \
+    chown mysql:mysql /etc/secret.txt && \
+    chmod 400 /etc/secret.txt
 
 #################################################
 # supervisor
